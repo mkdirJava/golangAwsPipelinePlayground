@@ -1,0 +1,15 @@
+FROM golang:1.16-alpine
+WORKDIR /app
+COPY go.mod ./
+COPY go.sum ./
+RUN go mod download
+
+COPY ./graph ./graph
+COPY ./internal ./internal
+COPY ./integrationTests ./integrationTests
+
+COPY *.go ./
+
+RUN apk add build-base
+
+CMD [ "go", "test","./...", "-count=1", "-v", "-coverprofile","cover.out"]

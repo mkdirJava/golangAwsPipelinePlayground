@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  integration_test_runner:
+    build:
+      context: ".."
+      dockerfile: Dockerfile_integration
+
+    depends_on:
+      - "test_service"
+
+  test_service:
+    build: ".."
+    ports:
+      - "8080:8080"

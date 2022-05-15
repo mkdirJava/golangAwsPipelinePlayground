@@ -1,0 +1,10 @@
+query GetMyTodos{
+  todos{
+    id
+    user{
+      name
+    }
+    text
+    done
+  }
+}

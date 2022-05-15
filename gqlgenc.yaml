@@ -1,0 +1,15 @@
+model:
+  package: generated_test_stub
+  filename: ./integrationTests/tests/generated_test_stub/models_gen.go # https://github.com/99designs/gqlgen/tree/master/plugin/modelgen
+client:
+  package: generated_test_stub
+  filename: ./integrationTests/tests/generated_test_stub/client.go # Where should any generated client go?
+models:
+  Int:
+    model: github.com/99designs/gqlgen/graphql.Int64
+  Date:
+    model: github.com/99designs/gqlgen/graphql.Time
+schema:
+  - "./graph/schema/**/*.graphql" # Where are all the schema files located?
+query:
+  - "./graph//query/*.graphql" # Where are all the query files located?
