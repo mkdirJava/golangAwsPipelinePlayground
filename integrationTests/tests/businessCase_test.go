@@ -15,5 +15,5 @@ func TestTodo(t *testing.T) {
 	client := generated_test_stub.NewClient(&http.Client{}, "http://test_service:8080/query")
 	todoResponse, toDoTransmissionErr := client.GetMyTodos(context.TODO())
 	require.NoError(t, toDoTransmissionErr)
-	require.Empty(t, todoResponse.Todos)
+	require.NotEmpty(t, todoResponse.Todos)
 }
