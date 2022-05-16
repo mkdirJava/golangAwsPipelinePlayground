@@ -4,7 +4,7 @@ on:
     types:
       - opened
     branches:    
-      - 'main/**'  
+      - 'main'  
 jobs:
   practice:
     runs-on: ubuntu-latest
